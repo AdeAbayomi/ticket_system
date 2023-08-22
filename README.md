@@ -1,3 +1,5 @@
+This is a ticketing system complete with both backend(laravel) and frontend(reactjs) .
+
 The backend files are in the backend folder. Change the default Db details in the .env file.
 To create the db and generate db fake user data , run php artisan migrate --seed
 To run vite, use npm install && npm run dev
