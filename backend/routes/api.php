@@ -15,9 +15,9 @@ use App\Http\Controllers\TicketController;
 |
 */
 
-/*Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-}); */
+// Route::middleware('auth:sanctum')->group(function () {
+//     // Your protected routes
+// });
 
 Route::get('/tickets/open', [TicketController::class, 'getOpenTickets']);
 Route::get('/tickets/closed', [TicketController::class, 'getClosedTickets']);

@@ -49,4 +49,11 @@ class TicketApiTest extends TestCase
             ],
         ]);
     }
+
+    public function testCreateTickets()
+    {
+        $this->artisan('app:generate-ticket')
+         ->expectsOutput('Ticket generated successfully.')
+         ->assertExitCode(0);
+    }
 }

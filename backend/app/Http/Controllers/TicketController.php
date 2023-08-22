@@ -18,6 +18,11 @@ class TicketController extends Controller
             ->paginate(50);
 
         return TicketResource::collection($tickets);
+      //  return Inertia::render('Tickets/Open', ['tickets' => $tickets]);
+
+    //     $response->header('Cache-Control', 'public, max-age=3600'); // Cache the response for 1 hour
+
+    // return $response;
     }
 
     //get list of tickets processed
@@ -65,5 +70,24 @@ class TicketController extends Controller
 
         return response()->json($data);
     }
+    // $stats = Cache::remember('ticket_stats', 60, function () {
+    //     $totalTickets = Ticket::count();
+    //     $unprocessedTickets = Ticket::where('status', false)->count();
+    //     $highestTicketUser = Ticket::select('user_id')
+    //         ->groupBy('user_id')
+    //         ->orderByRaw('COUNT(*) DESC')
+    //         ->first();
+
+    //     $lastProcessingTime = Ticket::where('status', true)
+    //         ->latest('updated_at')
+    //         ->value('updated_at');
+
+    //     return [
+    //         'total_tickets' => $totalTickets,
+    //         'unprocessed_tickets' => $unprocessedTickets,
+    //         'highest_ticket_user' => User::find($highestTicketUser->user_id, ['name', 'email']),
+    //         'last_processing_time' => $lastProcessingTime,
+    //     ];
+    // });
 }
 
